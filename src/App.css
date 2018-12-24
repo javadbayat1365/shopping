@@ -30,3 +30,18 @@
     transform: rotate(360deg);
   }
 }
+
+
+.divColumnMain{
+  float: left;
+  margin:0px 15%;
+  
+}
+
+.divColumn
+{
+  float: left;
+  margin: 0px 10%;
+}
+
+@import '~antd/dist/antd.css';

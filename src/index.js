@@ -6,7 +6,7 @@ import AboutUs from './aboutUs';
 import Tell from './tell';
 import * as serviceWorker from './serviceWorker';
 import {Route, BrowserRouter,  Router} from 'react-router-dom';
-import NavFour from './Nav/Four';
+import NavFour from './Nav/NavFour';
 
 const routes=(
 
@@ -15,7 +15,7 @@ const routes=(
  <Route path="/" component={App} />
  <Route path="/about" component={AboutUs} />
  <Route path='/tell' component={Tell} />
- <Route path="/Nav/Four" component={NavFour} />
+ <Route path="/Nav/NavFour" component={NavFour} />
  </div>
 </BrowserRouter>
 );

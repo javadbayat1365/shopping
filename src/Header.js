@@ -49,7 +49,7 @@ export default class Header extends Component {
                         </MenuItemGroup>
                     </SubMenu>
                     <Menu.Item key="">
-                        <Link to="/Nav/Four"  rel="noopener noreferrer">Navigation Four - Link</Link>
+                        <Link to="/Nav/NavFour"  rel="noopener noreferrer">Navigation Four - Link</Link>
                     </Menu.Item>
                 </Menu>
             </div>

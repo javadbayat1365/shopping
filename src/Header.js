@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Menu, Icon } from 'antd';
-
+import {Link } from 'react-router-dom';
 
 
 const SubMenu = Menu.SubMenu;
@@ -36,19 +36,20 @@ export default class Header extends Component {
                     mode="horizontal"
                 >
                     <Menu.Item key="home">
-                        <Icon type="Home" />Home
+                    <Link to="/" >Home</Link>
                     </Menu.Item>
-                    <Menu.Item key="app">
-                        <Icon type="appstore" />AboutUs
+                    <Menu.Item key="about">
+                       <Link to="/about">AboutUs</Link>
                     </Menu.Item>
                     <SubMenu title={<span className="submenu-title-wrapper"><Icon type="setting" />Sub Menu</span>}>
                         <MenuItemGroup >
-                            <Menu.Item key="images">Images</Menu.Item>
-                            <Menu.Item key="tell">Tell</Menu.Item>
+                            <Menu.Item key="tell">
+                            <Link to="/tell"  rel="noopener noreferrer">Tell</Link>
+                            </Menu.Item>
                         </MenuItemGroup>
                     </SubMenu>
-                    <Menu.Item key="alipay">
-                        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">Navigation Four - Link</a>
+                    <Menu.Item key="">
+                        <Link to="/Nav/Four"  rel="noopener noreferrer">Navigation Four - Link</Link>
                     </Menu.Item>
                 </Menu>
             </div>

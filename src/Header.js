@@ -33,8 +33,7 @@ export default class Header extends Component {
                 <Menu
                     onClick={this.handleClick}
                     selectedKeys={[this.state.current]}
-                    mode="horizontal"
-                >
+                    mode="horizontal">
                     <Menu.Item key="home">
                     <Link to="/" >Home</Link>
                     </Menu.Item>

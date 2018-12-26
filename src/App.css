@@ -44,4 +44,7 @@
   margin: 0px 10%;
 }
 
+.RowHeader{
+  text-align: center;
+}
 @import '~antd/dist/antd.css';

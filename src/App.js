@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div>
         <Row className="RowHeader" justify="center" type="flex">
-          <Col span={12} >
+          <Col span={18} >
           <Header selectedMenu='home' />
           <div>Welcome To My Shop</div>
           <Products products={this.state.products} />

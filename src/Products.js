@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 import {Row, Col} from 'antd';
 import helper from './helper';
 import Product from './Product';
-export default class Products extends Component
+import propTypes from 'prop-types';
+
+
+ class Products extends Component
 {
 constructor(props)
 {
@@ -16,8 +19,8 @@ renderProduct(key)
 {
     return(
 
-        <Col key={key} span={8}>
-        <Product details={this.props.products[key]} />
+        <Col className="ColProduct" key={key} span={8}>
+        <Product index={key} details={this.props.products[key]}  AddToCard = {this.props.AddToCard} orders = {this.props.orders}/>
         </Col>
     );
  
@@ -44,3 +47,12 @@ return(
         );
     }
 }
+
+Products.PropTypes =
+{
+    AddToCard : propTypes.func.required,
+    orders : propTypes.array.required,
+    products : propTypes.Object,
+}
+
+export default Products;

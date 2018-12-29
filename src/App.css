@@ -53,6 +53,12 @@
 }
 .Row-card{
   padding: 10px;
-  margin: 10px;
+  height: 150px;
+}
+.ColProduct
+{
+  height: 300px;
+  text-align: justify;
+  max-height: 300px;
 }
 @import '~antd/dist/antd.css';

@@ -12,7 +12,7 @@ const routes=(
 
 <BrowserRouter>
 <div>
- <Route path="/" component={App} />
+ <Route path="/" component={Tell} />
  <Route path="/about" component={AboutUs} />
  <Route path='/tell' component={Tell} />
  <Route path="/Nav/NavFour" component={NavFour} />

@@ -48,7 +48,7 @@ return(
     }
 }
 
-Products.PropTypes =
+Products.propTypes =
 {
     AddToCard : propTypes.func.required,
     orders : propTypes.array.required,

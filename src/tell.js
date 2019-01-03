@@ -1,22 +1,46 @@
 import React, { Component } from 'react';
-import { Row, Col, Button } from 'antd';
+import { Form, Input, Row, Col, Button } from 'antd';
 import Header from './Header';
+import ReactMixin from 'react-mixin';
+import Mixins from './Mixins';
 
-export default class AboutUs extends Component {
+const FormItem = Form.Item;
+
+ class AboutUs extends Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            formBody: {
+                name: 'javad',
+                email: '',
+                message: ''
+            }
+        }
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handlechange = this.handlechange.bind(this);
+
+        this.success("hello Mixins");
+        this.error("I'm ready for using Mixins");
     }
+    
+    handlechange(event){
+      const target = event.target;
+      const name = target.name;
+      const value = target.value;
 
-
+    this.state.formBody[name] = value;
+    
+    this.setState({
+      formBody : this.state.formBody
+    })
+    }
+   
     handleSubmit(e) {
-      e.preventDefault();
-     let dataform = {
-          name:this.refs.name.value,
-          email: this.refs.mail.value,
-          message:this.refs.message.value
-      }
-console.log(dataform);
+        e.preventDefault();
+        console.log(this.state.formBody);
 
     }
 
@@ -30,52 +54,20 @@ console.log(dataform);
                     <Row type="flex" justify="center">
                         <Col span={12}>
                             <h2>Contact US</h2>
-                            <form onSubmit={this.handleSubmit.bind(this)}>
-                                <div className="ant-row ant-form-item">
-                                    <div className="ant-form-item-lable">
-                                        <label>
-                                            Name
-                                        </label>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="ant-form-item-control">
-                                        <input type="text" ref="name" name="name" placeholder="please Enter Your Name" className="ant-input ant-input-lg" />
-                                    </div>
-                                </div>
-
-                                <div className="ant-row ant-form-item">
-                                    <div className="ant-form-item-lable">
-                                        <label>
-                                            Email
-                                        </label>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="ant-form-item-control">
-                                        <input type="text" name="email" ref="mail" placeholder="please Enter Your Email" className="ant-input ant-input-lg" />
-                                    </div>
-                                </div>
-
-                                <div className="ant-row ant-form-item">
-                                    <div className="ant-form-item-lable">
-                                        <label>
-                                            Message
-                                        </label>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="ant-form-item-control">
-                                        <textarea type="text" ref="message" name="message" placeholder="please Enter Your Message" className="ant-input ant-input-lg" />
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div className="ant-form-item-control">
-                                      <Button  htmlType="submit" text value="click me!"  />
-                                    </div>
-                                </div>
-                            </form>
+                            <Form onSubmit={this.handleSubmit}>
+                                <FormItem label="name">
+                                    <Input type="text" name="name" value={this.state.formBody.name} onChange={this.handlechange}  placeholder="please Enter Your Name" />
+                                </FormItem>
+                                <FormItem label="e-mail">
+                                    <Input type="text" value={this.state.formBody.email} onChange={this.handlechange} name="email" placeholder="please Enter Your e-mail" />
+                                </FormItem>
+                                <FormItem label="message">
+                                    <Input type="text" value={this.state.formBody.message} onChange={this.handlechange} name="message" placeholder="please Enter Your message" />
+                                </FormItem>
+                                <FormItem >
+                                    <Button htmlType="submit" type="primary" >Click ME!</Button>
+                                </FormItem>
+                            </Form>
                         </Col>
                     </Row>
                 </Col>
@@ -84,3 +76,7 @@ console.log(dataform);
         );
     }
 }
+
+
+ReactMixin.onClass(AboutUs,Mixins.log);
+export default AboutUs;
